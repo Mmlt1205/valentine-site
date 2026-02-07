@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    font-family: "Inter", system-ui, sans-serif;
+    background: #fafafa;
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    background: white;
+    padding: 48px 40px;
+    border-radius: 16px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  }
+
+  h1 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 28px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+
+  #yes {
+    background: #111;
+    color: white;
+  }
+
+  #yes:hover {
+    transform: scale(1.05);
+  }
+
+  #no {
+    background: transparent;
+    color: #999;
+  }
+
+  #no:hover {
+    color: #111;
+  }
+
+  #result {
+    margin-top: 24px;
+    font-size: 14px;
+    color: #111;
+    display: none;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Will you be my Valentine?</h1>
+  <p>no pressure. just me asking.</p>
+
+  <div class="buttons">
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+  </div>
+
+  <div id="result">
+    glad you said yes. 🤍
+  </div>
+
+</div>
+
+<script>
+  const yes = document.getElementById("yes");
+  const no = document.getElementById("no");
+  const result = document.getElementById("result");
+
+  yes.onclick = () => {
+    result.style.display = "block";
+    yes.style.display = "none";
+    no.style.display = "none";
+  };
+
+  no.onclick = () => {
+    no.innerText = "are you sure?";
+  };
+</script>
+
+</body>
+</html>
